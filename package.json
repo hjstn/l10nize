@@ -1,6 +1,6 @@
 {
   "name": "l10nize",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Localization framework.",
   "main": "index.js",
   "scripts": {
