@@ -1,6 +1,6 @@
 {
-  "name": "l10n",
-  "version": "1.0.0",
+  "name": "l10nize",
+  "version": "1.0.1",
   "description": "Localization framework.",
   "main": "index.js",
   "scripts": {
@@ -10,5 +10,17 @@
   "license": "MIT",
   "dependencies": {
     "glob": "^7.1.2"
-  }
+  },
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justin97530/l10nize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/justin97530/l10nize/issues"
+  },
+  "homepage": "https://github.com/justin97530/l10nize#readme"
 }
