@@ -2,7 +2,7 @@
 Localizer framework.
 
 ## Usage
-```
+```js
 const options = {
     languages: {
         en_US: {
@@ -27,10 +27,11 @@ const localizer = new Localizer(options);
 
 More information, and an example, are available in the `examples` folder.
 
-## localize(name, languages)
+## localize(name, languages, arguments)
 
 * `name` (String) Name of string to be localized.
 * `languages` (Array, Languages) Array of languages to localize, in order of which should be tried first.
+* `arguments` (Object) Placeholder names and the values to replace them.
 
 Localize a message.
 
@@ -60,19 +61,19 @@ Set the message returned if no localization could be found.
 
 Add a language to the languages.
 
-## removeLanguage
+## removeLanguage(name)
 
 * `name` (String) Name of the language being removed.
 
 Remove a language from the languages.
 
-## addLanguages
+## addLanguages(languages)
 
 * `languages` (Array, Languages) Array of languages to be added.
 
 Add multiple languages to the languages.
 
-## setLanguages
+## setLanguages(languages)
 
 * `languages` (Array, Languages) Array of languages to replace current array.
 

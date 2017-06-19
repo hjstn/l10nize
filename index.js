@@ -17,9 +17,10 @@ class Localizer {
         this.default = typeof config.default === "string" ? config.default : "!%name%!";
     }
 
-    localize(name, languages) {
+    localize(name, languages, args = {}) {
         if (typeof name !== "string") throw new Error("Name must be a string.");
         if (!Array.isArray(languages)) throw new Error("Languages must be an array.");
+        if (typeof args !== "object" || Array.isArray(args)) throw new Error("Arguments must be an object.");
 
         if (this.fallback) languages = languages.concat([ this.fallback ]);
 
@@ -38,6 +39,12 @@ class Localizer {
 
             localization = language[name];
             return true;
+        });
+
+        Object.keys(args).forEach((arg) => {
+            if (!/^[a-zA-Z]+$/.test(arg)) throw new Error(`Argument must only be alphabetic (${arg})`);
+
+            localization = localization.replace(new RegExp(`%${arg}%`, "g"), args[arg]);
         });
 
         return localization ? localization : this.default.replace(/%name%/g, name);
